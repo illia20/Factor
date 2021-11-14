@@ -33,7 +33,11 @@ public class TheAlgorithm implements AM {
     {
         BigInteger a = sqrt(N);
         BigInteger b2 = a.multiply(a).subtract(N);
-
+        if(b2.compareTo(ZERO)==-1)
+        {
+            a = a.add(ONE);
+            b2 = (a.multiply(a)).subtract(N);
+        }
         while (!isSquare(b2))
         {
             a = a.add(ONE);
